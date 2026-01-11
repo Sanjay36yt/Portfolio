@@ -1,10 +1,9 @@
 <?php
-$servername = "localhost";
-$user = "root";
-$password = "";
-$dbname = "persional";
-// $eamil_val = "sanjay36yt@gmail.com";
-// $pass_val = "Sanjay36yt@@";
+$servername = getenv('DB_HOST') ?: "localhost";
+$user = getenv('DB_USER') ?: "root";
+$password = getenv('DB_PASS') ?: "";
+$dbname = getenv('DB_NAME') ?: "persional";
+
 
 global $data_base_con;
 $data_base_con = new mysqli($servername,$user,$password,$dbname);
